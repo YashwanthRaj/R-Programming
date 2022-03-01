@@ -1,0 +1,7 @@
+rm(list=ls())
+setwd("F:/6th Sem/CSE3506 - Essentials of Data Analytics/Lab/Datasets")
+a1=read.csv("crop.data.csv")
+a1$fertilizer=as.factor(a1$fertilizer)
+AOV=aov(yield~fertilizer,data=a1)
+summary(AOV)
+TukeyHSD(AOV)
